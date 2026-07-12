@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Access - Eventify</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Responsive Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-dot"></div>
+                Event<span>ify</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="auth.html" class="nav-link active">Login/Signup</a></li>
+                <li><a href="auth.html" class="btn btn-primary nav-btn">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Section Portal -->
+    <main class="auth-wrapper">
+        <div class="hero-bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+
+        <div class="auth-container">
+            <div class="auth-tabs" id="authTabs" data-active="login">
+                <button class="auth-tab active" id="tabLogin">Login</button>
+                <button class="auth-tab" id="tabSignup">Sign Up</button>
+                <div class="auth-tab-slider"></div>
+            </div>
+
+            <div class="auth-form-wrapper">
+                <div class="auth-forms-container" id="formsContainer">
+                    <!-- Form 1: LOGIN -->
+                    <form class="auth-form" id="loginForm" novalidate>
+                        <div class="auth-header">
+                            <h2>Welcome Back</h2>
+                            <p>Log in to access your dashboard and tickets.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <div class="form-control-wrapper">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="loginEmail" class="form-control" placeholder="name@domain.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <div class="form-control-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="loginPassword" class="form-control" placeholder="••••••••"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-auth">Log In</button>
+
+                        <div class="auth-divider">
+                            <span>Or continue with</span>
+                        </div>
+
+                        <div class="social-auth-grid">
+                            <button type="button" class="btn-social">
+                                <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+                                Google
+                            </button>
+                            <button type="button" class="btn-social">
+                                <i class="fa-brands fa-github" style="color: #24292f;"></i>
+                                GitHub
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Form 2: SIGN UP -->
+                    <form class="auth-form" id="signupForm" novalidate>
+                        <div class="auth-header">
+                            <h2>Create Account</h2>
+                            <p>Join us to discover and host experiences.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <div class="form-control-wrapper">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="signupName" class="form-control" placeholder="John Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address</label>
+                            <div class="form-control-wrapper">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="signupEmail" class="form-control" placeholder="name@domain.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="form-control-wrapper">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="signupPassword" class="form-control"
+                                    placeholder="Min. 8 characters" required>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTerms" required>
+                                <span style="font-size: 0.8rem;">I agree to the Terms & Privacy Policy</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-auth">Sign Up</button>
+
+                        <div class="auth-divider">
+                            <span>Or sign up with</span>
+                        </div>
+
+                        <div class="social-auth-grid">
+                            <button type="button" class="btn-social">
+                                <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+                                Google
+                            </button>
+                            <button type="button" class="btn-social">
+                                <i class="fa-brands fa-github" style="color: #24292f;"></i>
+                                GitHub
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Toast Alerts -->
+    <div class="alert-toast" id="authToast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="authToastMessage">Action completed successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 10px;">
+                        <div class="logo-dot"></div>
+                        Event<span style="color: var(--primary);">ify</span>
+                    </a>
+                    <p>Create, manage, and scale your events with ease. Our streamlined toolkit is designed for
+                        experiences of all formats.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events Directory</a></li>
+                        <li><a href="auth.html">Register Account</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Eventify Inc. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase CDN & Client Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <!-- Shared Javascript -->
+    <script src="main.js"></script>
+    <!-- Page Specific Script -->
+    <script src="auth.js"></script>
+</body>
+
+</html>

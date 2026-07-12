@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify - Discover & Host Premium Events</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Responsive Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-dot"></div>
+                Event<span>ify</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
+                <li><a href="auth.html" class="nav-link">Login/Signup</a></li>
+                <li><a href="auth.html" class="btn btn-primary nav-btn">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-wrapper">
+        <div class="hero-bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Connecting you to local & global experiences</span>
+                </div>
+                <h1>Host, Manage, and Discover <span>Unforgettable Events</span></h1>
+                <p>Bring people together with the world's most powerful, intuitive event hosting platform. Seamless ticketing, beautiful layouts, and real-time attendee tracking.</p>
+                <div class="hero-ctas">
+                    <a href="events.html" class="btn btn-primary">Browse Events</a>
+                    <a href="auth.html" class="btn btn-secondary">Host an Event</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500K+</h3>
+                    <p>Tickets Sold</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,200+</h3>
+                    <p>Active Hosts</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8★</h3>
+                    <p>Host Rating</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>Booking Success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need to Connect</h2>
+                <p>We provide tools for organizers and attendees that make discovering, booking, and running events simple, fast, and secure.</p>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
+                    <h3>Easy Ticketing</h3>
+                    <p>Create customizable digital tickets, configure VIP passes, and sell out in minutes with secure local checkouts.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Powerful Dashboard</h3>
+                    <p>Track check-ins, ticketing metrics, audience demographics, and real-time revenue stats in a single panel.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3>Interactive Venues</h3>
+                    <p>Integrate Google Maps, layout physical seating configurations, and offer direct coordinate routing to attendees.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlighted Events (Teaser) -->
+    <section class="teaser-section" style="background-color: var(--bg-white); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Experiences</h2>
+                <p>Join top-tier conferences, musical concerts, and active workshops occurring around you this season.</p>
+            </div>
+            
+            <div class="teaser-grid">
+                <!-- Event Card 1 -->
+                <article class="event-card">
+                    <div class="event-image-container" style="background: linear-gradient(135deg, #818cf8, #a78bfa);">
+                        <div class="event-placeholder-graphic">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <span class="event-overlay-category">Technology</span>
+                        <span class="event-overlay-price">$299</span>
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date-row">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Oct 12, 2026 • 9:00 AM</span>
+                        </div>
+                        <h3 class="event-title">Global Tech Summit 2026</h3>
+                        <p class="event-desc">Join industry leaders for an engaging series of panels discussing artificial intelligence, web3, and cloud infrastructures.</p>
+                        <div class="event-meta-info">
+                            <div class="event-meta-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>San Francisco, CA</span>
+                            </div>
+                        </div>
+                        <div class="event-card-actions">
+                            <a href="events.html" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Event Card 2 -->
+                <article class="event-card">
+                    <div class="event-image-container" style="background: linear-gradient(135deg, #f472b6, #fb7185);">
+                        <div class="event-placeholder-graphic">
+                            <i class="fa-solid fa-guitar"></i>
+                        </div>
+                        <span class="event-overlay-category">Music</span>
+                        <span class="event-overlay-price">$89</span>
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date-row">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Nov 04, 2026 • 6:30 PM</span>
+                        </div>
+                        <h3 class="event-title">Sunset Music Festival</h3>
+                        <p class="event-desc">Experience a stellar lineup of indie bands and acoustic soloists performing at the ultimate waterfront outdoor amphitheater.</p>
+                        <div class="event-meta-info">
+                            <div class="event-meta-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Austin, TX</span>
+                            </div>
+                        </div>
+                        <div class="event-card-actions">
+                            <a href="events.html" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Event Card 3 -->
+                <article class="event-card">
+                    <div class="event-image-container" style="background: linear-gradient(135deg, #34d399, #60a5fa);">
+                        <div class="event-placeholder-graphic">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <span class="event-overlay-category">Arts</span>
+                        <span class="event-overlay-price">$45</span>
+                    </div>
+                    <div class="event-info">
+                        <div class="event-date-row">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>Dec 18, 2026 • 2:00 PM</span>
+                        </div>
+                        <h3 class="event-title">Creative Palette Workshop</h3>
+                        <p class="event-desc">Unleash your expression with guided modern canvas painting classes, led by internationally acclaimed fine arts instructors.</p>
+                        <div class="event-meta-info">
+                            <div class="event-meta-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>New York, NY</span>
+                            </div>
+                        </div>
+                        <div class="event-card-actions">
+                            <a href="events.html" class="btn btn-outline">Learn More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="teaser-footer">
+                <a href="events.html" class="btn btn-primary">Browse All Upcoming Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 10px;">
+                        <div class="logo-dot"></div>
+                        Event<span style="color: var(--primary);">ify</span>
+                    </a>
+                    <p>Create, manage, and scale your events with ease. Our streamlined toolkit is designed for experiences of all formats.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events Directory</a></li>
+                        <li><a href="auth.html">Register Account</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Eventify Inc. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase CDN & Client Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <!-- Shared Javascript -->
+    <script src="main.js"></script>
+</body>
+</html>

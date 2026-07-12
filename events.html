@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Events - Eventify</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Responsive Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-dot"></div>
+                Event<span>ify</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="auth.html" class="nav-link">Login/Signup</a></li>
+                <li><a href="auth.html" class="btn btn-primary nav-btn">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Catalog Page Content -->
+    <main class="catalog-wrapper">
+        <section>
+            <div class="container">
+                <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 30px;">
+                    <h2>Explore Events</h2>
+                    <p>Find and book tickets to conferences, workshops, design expos, concerts, and more.</p>
+                </div>
+
+                <!-- Filters Panel -->
+                <div class="filter-bar">
+                    <div class="search-filter-row">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search by title, location, or host name...">
+                        </div>
+                        <div class="sort-box">
+                            <select id="sortBy" aria-label="Sort events">
+                                <option value="date-asc">Date: Upcoming first</option>
+                                <option value="date-desc">Date: Furthest first</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="categories-row">
+                        <button class="category-tab active" data-category="all">All Events</button>
+                        <button class="category-tab" data-category="tech">Technology</button>
+                        <button class="category-tab" data-category="music">Music</button>
+                        <button class="category-tab" data-category="art">Arts & Design</button>
+                        <button class="category-tab" data-category="sports">Sports & Wellness</button>
+                    </div>
+                </div>
+
+                <!-- Grid Catalog -->
+                <div class="events-catalog-grid" id="eventsGrid">
+                    <!-- Events loaded dynamically via events.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Detailed Modal Dialogue -->
+    <div class="modal-overlay" id="eventModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-hero-banner" id="modalBanner">
+                <i id="modalBannerIcon" class=""></i>
+            </div>
+            <div class="modal-body">
+                <span class="modal-category-pill" id="modalCategory">Category</span>
+                <h2 class="modal-title" id="modalTitle">Event Title Placeholder</h2>
+                
+                <div class="modal-grid">
+                    <div class="modal-info-item">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <div>
+                            <h4>Date & Time</h4>
+                            <p id="modalDateTime">October 12, 2026 at 9:00 AM</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p id="modalLocation">Virtual Event / Online</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <div>
+                            <h4>Organized By</h4>
+                            <p id="modalOrganizer">TechCorp Inc.</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <div>
+                            <h4>Tickets Available</h4>
+                            <p id="modalTicketsLeft">45 spots remaining</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-details-desc">
+                    <h3>About This Event</h3>
+                    <p id="modalDescription">Detailed information about the event description, what visitors can learn, special requirements, and timelines will be rendered dynamically.</p>
+                </div>
+
+                <div class="modal-checkout-row">
+                    <div class="modal-price-calc">
+                        <h4>Ticket price</h4>
+                        <p id="modalPrice">$0.00</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnRegisterTicket">Register for Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert toast popup -->
+    <div class="alert-toast" id="alertToast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Ticket booked successfully!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 10px;">
+                        <div class="logo-dot"></div>
+                        Event<span style="color: var(--primary);">ify</span>
+                    </a>
+                    <p>Create, manage, and scale your events with ease. Our streamlined toolkit is designed for experiences of all formats.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Platform</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events Directory</a></li>
+                        <li><a href="auth.html">Register Account</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Eventify Inc. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Supabase CDN & Client Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <!-- Shared Javascript -->
+    <script src="main.js"></script>
+    <!-- Page Specific Script -->
+    <script src="events.js"></script>
+</body>
+</html>
