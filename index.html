@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Events - Eventify</title>
+    <title>Eventify - Discover & Host Premium Events</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons -->
@@ -14,7 +14,7 @@
     <!-- Responsive Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
+            <a href="index.html#home" class="logo">
                 <div class="logo-dot"></div>
                 Event<span>ify</span>
             </a>
@@ -24,8 +24,8 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="index.html#home" class="nav-link active">Home</a></li>
+                <li><a href="events.html" class="nav-link">Events</a></li>
                 <li><a href="index.html#services" class="nav-link">Services</a></li>
                 <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="index.html#packages" class="nav-link">Packages</a></li>
@@ -38,139 +38,850 @@
         </div>
     </nav>
 
-    <!-- Catalog Page Content -->
-    <main class="catalog-wrapper">
-        <section>
-            <div class="container">
-                <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 30px;">
-                    <h2>Explore Events</h2>
-                    <p>Find and book tickets to conferences, workshops, design expos, concerts, and more.</p>
+    <!-- Hero Section -->
+    <header class="hero-wrapper" id="home">
+        <div class="hero-bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Connecting you to local & global experiences</span>
                 </div>
-
-                <!-- Filters Panel -->
-                <div class="filter-bar">
-                    <div class="search-filter-row">
-                        <div class="search-box">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="searchInput" class="search-input" placeholder="Search by title, location, or host name...">
-                        </div>
-                        <div class="sort-box">
-                            <select id="sortBy" aria-label="Sort events">
-                                <option value="date-asc">Date: Upcoming first</option>
-                                <option value="date-desc">Date: Furthest first</option>
-                                <option value="price-asc">Price: Low to High</option>
-                                <option value="price-desc">Price: High to Low</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="categories-row">
-                        <button class="category-tab active" data-category="all">All Events</button>
-                        <button class="category-tab" data-category="tech">Technology</button>
-                        <button class="category-tab" data-category="music">Music</button>
-                        <button class="category-tab" data-category="art">Arts & Design</button>
-                        <button class="category-tab" data-category="sports">Sports & Wellness</button>
-                    </div>
-                </div>
-
-                <!-- Grid Catalog -->
-                <div class="events-catalog-grid" id="eventsGrid">
-                    <!-- Events loaded dynamically via events.js -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Detailed Modal Dialogue -->
-    <div class="modal-overlay" id="eventModal">
-        <div class="modal-container">
-            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="modal-hero-banner" id="modalBanner">
-                <i id="modalBannerIcon" class=""></i>
-            </div>
-            <div class="modal-body">
-                <span class="modal-category-pill" id="modalCategory">Category</span>
-                <h2 class="modal-title" id="modalTitle">Event Title Placeholder</h2>
-                
-                <div class="modal-grid">
-                    <div class="modal-info-item">
-                        <i class="fa-regular fa-calendar-days"></i>
-                        <div>
-                            <h4>Date & Time</h4>
-                            <p id="modalDateTime">October 12, 2026 at 9:00 AM</p>
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p id="modalLocation">Virtual Event / Online</p>
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <i class="fa-solid fa-user-tie"></i>
-                        <div>
-                            <h4>Organized By</h4>
-                            <p id="modalOrganizer">TechCorp Inc.</p>
-                        </div>
-                    </div>
-                    <div class="modal-info-item">
-                        <i class="fa-solid fa-ticket-simple"></i>
-                        <div>
-                            <h4>Tickets Available</h4>
-                            <p id="modalTicketsLeft">45 spots remaining</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-details-desc">
-                    <h3>About This Event</h3>
-                    <p id="modalDescription">Detailed information about the event description, what visitors can learn, special requirements, and timelines will be rendered dynamically.</p>
-                </div>
-
-                <div class="modal-checkout-row">
-                    <div class="modal-price-calc">
-                        <h4>Ticket price</h4>
-                        <p id="modalPrice">$0.00</p>
-                    </div>
-                    <button class="btn btn-primary" id="btnRegisterTicket">Register for Event</button>
+                <h1>Host, Manage, and Discover <span>Unforgettable Events</span></h1>
+                <p>Bring people together with the world's most powerful, intuitive event hosting platform. Seamless ticketing, beautiful layouts, and real-time attendee tracking.</p>
+                <div class="hero-ctas">
+                    <a href="events.html" class="btn btn-primary">Browse Events</a>
+                    <a href="#booking" class="btn btn-secondary">Book Custom Event</a>
                 </div>
             </div>
         </div>
+    </header>
+
+    <!-- Stats Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500K+</h3>
+                    <p>Tickets Sold</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1,200+</h3>
+                    <p>Active Hosts</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8★</h3>
+                    <p>Host Rating</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>Booking Success</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Categories Section -->
+    <section class="categories-section" id="categories-grid">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Event Category</h2>
+                <p>We craft tailor-made experiences across a wide range of social and professional event types.</p>
+            </div>
+            <div class="categories-grid">
+                <!-- Wedding -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Weddings" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-heart"></i></div>
+                        <h3>Weddings</h3>
+                        <p>Celebrate your eternal union with luxury design, magical layouts, and meticulous event coordination.</p>
+                        <a href="events.html?category=art" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Birthday Parties -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80" alt="Birthday Parties" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-cake-candles"></i></div>
+                        <h3>Birthday Parties</h3>
+                        <p>Enjoy dynamic, vibrant themed birthdays, complete with custom setups and fun entertainments.</p>
+                        <a href="events.html?category=music" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Corporate Events -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Corporate Events" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-briefcase"></i></div>
+                        <h3>Corporate Events</h3>
+                        <p>Optimize professional branding and client relations with executive dinners and formal corporate gatherings.</p>
+                        <a href="events.html?category=tech" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Concerts -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=600&q=80" alt="Concerts" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-guitar"></i></div>
+                        <h3>Concerts</h3>
+                        <p>Deliver electric live musical experiences with custom audio engineering and high-intensity staging.</p>
+                        <a href="events.html?category=music" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Conferences -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80" alt="Conferences" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-users"></i></div>
+                        <h3>Conferences</h3>
+                        <p>Streamline corporate educational seminars, Q&A panels, and interactive live workshop environments.</p>
+                        <a href="events.html?category=tech" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Private Parties -->
+                <div class="category-card">
+                    <div class="category-img-container">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80" alt="Private Parties" class="category-img">
+                    </div>
+                    <div class="category-body">
+                        <div class="category-icon-badge"><i class="fa-solid fa-glass-cheers"></i></div>
+                        <h3>Private Parties</h3>
+                        <p>Host exclusive personal milestones, custom VIP dinners, and elite social functions at premium venues.</p>
+                        <a href="events.html?category=sports" class="btn-category-link">View Events <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Services</h2>
+                <p>We provide full-spectrum event management solutions so you can sit back and enjoy your special occasion.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Event Planning</h3>
+                    <p>End-to-end strategy, vendor negotiation, scheduling checkpoints, and dedicated day-of operation control.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>Decoration & Styling</h3>
+                    <p>Bespoke visual theme creation, premium floral schemes, custom backdrops, lighting overlays, and layout curation.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Gourmet Catering</h3>
+                    <p>Luxurious multi-course meals, local food installations, custom mixology, and versatile menu alternatives.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                    <h3>Cinematic Photography</h3>
+                    <p>Stunning 4K event coverages, specialized wedding packages, portrait photo stations, and fast post-production deliveries.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-compact-disc"></i></div>
+                    <h3>Music & Professional DJ</h3>
+                    <p>State-of-the-art concert sound systems, curated playlists, professional DJs, and live band bookings.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-building-user"></i></div>
+                    <h3>Venue Management</h3>
+                    <p>Premium venue matching, structural layouts planning, guest coordinate mappings, and health-safety oversight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Featured Events Section -->
+    <section class="teaser-section" id="upcoming-events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upcoming Experiences</h2>
+                <p>Reserve your tickets for these upcoming high-profile events managed by our organization.</p>
+            </div>
+            
+            <div class="teaser-grid" id="upcomingGrid">
+                <!-- Loaded dynamically using main.js -->
+            </div>
+
+            <div class="teaser-footer">
+                <a href="events.html" class="btn btn-primary">Browse All Upcoming Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Moments of Celebration</h2>
+                <p>Explore actual glimpses from corporate, wedding, and social events successfully engineered by our team.</p>
+            </div>
+            
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="gallery-filter-btn active" data-filter="all">All</button>
+                <button class="gallery-filter-btn" data-filter="wedding">Wedding</button>
+                <button class="gallery-filter-btn" data-filter="birthday">Birthday</button>
+                <button class="gallery-filter-btn" data-filter="corporate">Corporate</button>
+                <button class="gallery-filter-btn" data-filter="party">Party</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Item 1: Wedding -->
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Elegant Forest Wedding" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Elegant Forest Wedding</h4>
+                        <span>Wedding</span>
+                    </div>
+                </div>
+                <!-- Item 2: Corporate -->
+                <div class="gallery-item" data-category="corporate">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80" alt="Tech Keynote Presentation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Tech Keynote Presentation</h4>
+                        <span>Corporate</span>
+                    </div>
+                </div>
+                <!-- Item 3: Birthday -->
+                <div class="gallery-item" data-category="birthday">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Neon Glow Birthday" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Neon Glow Birthday</h4>
+                        <span>Birthday</span>
+                    </div>
+                </div>
+                <!-- Item 4: Party -->
+                <div class="gallery-item" data-category="party">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Summer Pool Social" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Summer Pool Social</h4>
+                        <span>Party</span>
+                    </div>
+                </div>
+                <!-- Item 5: Wedding -->
+                <div class="gallery-item" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=600&q=80" alt="Luxury Reception Banquet" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Luxury Reception Banquet</h4>
+                        <span>Wedding</span>
+                    </div>
+                </div>
+                <!-- Item 6: Corporate -->
+                <div class="gallery-item" data-category="corporate">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=600&q=80" alt="CEO Roundtable Dinner" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>CEO Roundtable Dinner</h4>
+                        <span>Corporate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="galleryLightbox" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous Image"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption" id="lightboxCaption">Caption text</div>
+        </div>
+        <button class="lightbox-next" aria-label="Next Image"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
-    <!-- Alert toast popup -->
-    <div class="alert-toast" id="alertToast">
-        <i class="fa-solid fa-circle-check"></i>
-        <span id="toastMessage">Ticket booked successfully!</span>
-    </div>
+    <!-- Event Packages Section -->
+    <section class="packages-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tailored Pricing Packages</h2>
+                <p>Choose an initial budget benchmark. All custom packages can be fully adapted to your specific requests.</p>
+            </div>
+            
+            <div class="packages-grid">
+                <!-- Basic Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Basic Package</h3>
+                        <div class="package-price">$1,499</div>
+                        <p class="package-desc">Perfect for small, intimate family events and private celebrations.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> Standard Venue Management</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Decoration & Backdrop</li>
+                        <li><i class="fa-solid fa-check"></i> Sound System & Mic setup</li>
+                        <li><i class="fa-solid fa-check"></i> 1 Dedicated Planner (4 hours)</li>
+                        <li><i class="fa-solid fa-check"></i> Support for up to 50 guests</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Multi-course Gourmet Meal</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Professional Drone Photography</li>
+                    </ul>
+                    <div class="package-actions">
+                        <button class="btn btn-secondary btn-select-pkg" data-package="Basic" data-budget="1499">Book Now</button>
+                    </div>
+                </div>
 
-    <!-- Footer -->
+                <!-- Standard Package (Highlighted) -->
+                <div class="package-card recommended">
+                    <div class="package-badge">RECOMMENDED</div>
+                    <div class="package-header">
+                        <h3>Standard Package</h3>
+                        <div class="package-price">$3,999</div>
+                        <p class="package-desc">Our most popular package. Designed for birthdays, large parties, and weddings.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> Premium Venue Match & Design</li>
+                        <li><i class="fa-solid fa-check"></i> Elaborate Theme Floral Decoration</li>
+                        <li><i class="fa-solid fa-check"></i> Multi-course Dining Catering</li>
+                        <li><i class="fa-solid fa-check"></i> Professional Photography (6 Hours)</li>
+                        <li><i class="fa-solid fa-check"></i> Sound & DJ Party Music Setups</li>
+                        <li><i class="fa-solid fa-check"></i> 2 Event Coordinators (Full Day)</li>
+                        <li><i class="fa-solid fa-check"></i> Support for up to 150 guests</li>
+                    </ul>
+                    <div class="package-actions">
+                        <button class="btn btn-primary btn-select-pkg" data-package="Standard" data-budget="3999">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Premium Package</h3>
+                        <div class="package-price">$8,999</div>
+                        <p class="package-desc">Ultimate luxury experience. Ideal for large-scale weddings, galas, and corporate summits.</p>
+                    </div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited Elite Venue Options</li>
+                        <li><i class="fa-solid fa-check"></i> Bespoke Custom Structural Styling</li>
+                        <li><i class="fa-solid fa-check"></i> 5-Star Gourmet Catering & Drinks</li>
+                        <li><i class="fa-solid fa-check"></i> Full Team Photo, Video & Drone</li>
+                        <li><i class="fa-solid fa-check"></i> Live Band & Audio Engineering</li>
+                        <li><i class="fa-solid fa-check"></i> Full Orchestration & Event Manager</li>
+                        <li><i class="fa-solid fa-check"></i> Support for up to 500 guests</li>
+                    </ul>
+                    <div class="package-actions">
+                        <button class="btn btn-secondary btn-select-pkg" data-package="Premium" data-budget="8999">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="about-badge">ABOUT EVENTIFY</div>
+                    <h2>Organizing Exceptional Events Since 2012</h2>
+                    <p>At Eventify, we believe every special moment deserves absolute perfection. Our professional crew brings creative styling, sound coordination, and culinary expertise under one unified canopy to bring your dream event to life.</p>
+                    <p>Over the last decade, we have managed more than 5,000 corporate seminars, premium weddings, high-octane music festivals, and themed birthday celebrations. We handle everything from the initial venue match to post-event management so you can relax and host with ease.</p>
+                    <div class="about-metrics">
+                        <div class="about-metric">
+                            <h4>12+</h4>
+                            <p>Years of Service</p>
+                        </div>
+                        <div class="about-metric">
+                            <h4>5K+</h4>
+                            <p>Successful Events</p>
+                        </div>
+                        <div class="about-metric">
+                            <h4>98%</h4>
+                            <p>Customer Joy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="About Eventify Staff Event" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reviews from Happy Hosts</h2>
+                <p>Read client reflections on how Eventify transformed ordinary spaces into magical experiences.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="testimonial-avatar">
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <p>Wedding Host</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Eventify styled our autumn wedding beautifully! The coordinators managed the catering transition and DJ setups flawlessly. I couldn't have requested a better team to execute our big day."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vane" class="testimonial-avatar">
+                        <div>
+                            <h4>Marcus Vane</h4>
+                            <p>Tech Corp Executive</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The Global Tech Summit was a complex event with hundreds of physical and online attendees. The Eventify team organized the speaker layouts and audio feeds with superb precision."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Alivia Croft" class="testimonial-avatar">
+                        <div>
+                            <h4>Alivia Croft</h4>
+                            <p>Birthday Party Host</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"My son's superhero-themed birthday was fantastic. The decorations, photo stations, and catering were perfect. The kids were thrilled, and the cleanup was quick."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Talented Crew</h2>
+                <p>The specialists who turn conceptual designs into stunning events.</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Team 1 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Helena Rose" class="team-img">
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Helena Rose</h3>
+                        <p class="team-role">Event Planner</p>
+                    </div>
+                </div>
+
+                <!-- Team 2 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Jonathan Cole" class="team-img">
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Jonathan Cole</h3>
+                        <p class="team-role">Event Coordinator</p>
+                    </div>
+                </div>
+
+                <!-- Team 3 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Aria Vance" class="team-img">
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Aria Vance</h3>
+                        <p class="team-role">Creative Designer</p>
+                    </div>
+                </div>
+
+                <!-- Team 4 -->
+                <div class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="Brandon Vance" class="team-img">
+                        <div class="team-social">
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Brandon Vance</h3>
+                        <p class="team-role">Lead Photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about our booking procedures and event coordination service.</p>
+            </div>
+            
+            <div class="faq-accordion">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>How can I book an event?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>You can book an event by filling out the Online Booking Form below with details like date, guests, budget, and event type. Our lead planner will review it and contact you within 24 hours to schedule an initial consultation call.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>How early should I book?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>We recommend booking at least 3 to 6 months in advance for large celebrations like weddings or corporate summits. For smaller birthdays or private parties, 1 month is usually sufficient, depending on venue availability.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Can I customize an event package?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Yes, absolutely! Our packages serve as initial budget guidelines. You can add or remove services (e.g. adding drone photography, selecting specific decorations, or choosing customized menus) as needed. We will prepare a custom proposal for you.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>What payment options are available?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>We accept all major credit cards, bank wire transfers, and secure online checkouts. Usually, we require a 30% initial deposit to reserve the date and venue, with installments scheduled leading up to the event day.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Do you provide decoration and catering?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Yes, we provide fully-integrated decoration, gourmet catering, professional sounds, live DJ music, and multi-angle camera coverage. You can choose to use our in-house teams or hire external vendors coordinates through our managers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-trigger" aria-expanded="false">
+                        <span>Can I cancel or reschedule my booking?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Bookings can be rescheduled up to 30 days prior to the event date without any extra penalty, depending on venue slots. Cancellations made more than 45 days in advance are eligible for a partial deposit refund.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Booking Form Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-info">
+                    <h2>Book Your Dream Event Now</h2>
+                    <p>Fill out our secure booking form, and our creative coordinators will begin drafting your custom layout proposals.</p>
+                    <ul class="booking-features-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Free initial 30-minute video call</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Personalized venue match layouts</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Customized styling and menu options</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Real-time organizer tracking portal</li>
+                    </ul>
+                </div>
+                <div class="booking-form-wrapper">
+                    <form id="onlineBookingForm" novalidate>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="bookingName">Full Name <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-regular fa-user"></i>
+                                    <input type="text" id="bookingName" class="form-control" placeholder="E.g., John Doe" required>
+                                </div>
+                                <span class="validation-error" id="nameError">Full name is required.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingEmail">Email Address <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-regular fa-envelope"></i>
+                                    <input type="email" id="bookingEmail" class="form-control" placeholder="name@domain.com" required>
+                                </div>
+                                <span class="validation-error" id="emailError">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="bookingPhone">Phone Number <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <input type="tel" id="bookingPhone" class="form-control" placeholder="10-digit number" required>
+                                </div>
+                                <span class="validation-error" id="phoneError">Please enter a valid 10-digit phone number.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingType">Event Type <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-solid fa-chevron-down select-chevron"></i>
+                                    <select id="bookingType" class="form-control select-control" required>
+                                        <option value="" disabled selected>Select event type</option>
+                                        <option value="Weddings">Wedding</option>
+                                        <option value="Birthday Parties">Birthday Party</option>
+                                        <option value="Corporate Events">Corporate Event</option>
+                                        <option value="Concerts">Concert</option>
+                                        <option value="Conferences">Conference</option>
+                                        <option value="Private Parties">Private Party</option>
+                                    </select>
+                                </div>
+                                <span class="validation-error" id="typeError">Please choose an event type.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label for="bookingDate">Event Date <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    <input type="date" id="bookingDate" class="form-control" required>
+                                </div>
+                                <span class="validation-error" id="dateError">Please choose a future date.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingGuests">Number of Guests <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-solid fa-users"></i>
+                                    <input type="number" id="bookingGuests" class="form-control" min="5" placeholder="Min. 5" required>
+                                </div>
+                                <span class="validation-error" id="guestsError">Please enter guest count (min. 5).</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingBudget">Estimated Budget ($) <span class="required-star">*</span></label>
+                                <div class="form-control-wrapper">
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    <input type="number" id="bookingBudget" class="form-control" min="500" placeholder="Min. 500" required>
+                                </div>
+                                <span class="validation-error" id="budgetError">Enter estimated budget (min. 500).</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 10px;">
+                            <label for="bookingMessage">Additional Message</label>
+                            <textarea id="bookingMessage" class="form-control text-area-control" rows="4" placeholder="Mention special requirements, catering preferences, or styling concepts..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" style="margin-top: 20px;">Submit Event Booking <i class="fa-solid fa-paper-plane" style="margin-left: 8px;"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Improved Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Have quick questions? Contact our head office or visit us directly during business hours.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Details -->
+                <div class="contact-details-panel">
+                    <h3>Contact Information</h3>
+                    <p class="contact-panel-desc">Reach out to us directly via email, phone, or drop by our design pavilion.</p>
+                    
+                    <ul class="contact-info-list">
+                        <li>
+                            <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (800) 555-0199 / +1 (800) 555-0198</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@eventify.com / bookings@eventify.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div>
+                                <h4>Main Address</h4>
+                                <p>Suite 400, 123 Experience St, New York, NY 10001</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-info-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM (Closed Sundays)</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="contact-social-icons">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Mock Map -->
+                <div class="contact-forms-panel">
+                    <div class="contact-form-card">
+                        <h3>Drop a Quick Message</h3>
+                        <form id="contactFormQuick" style="margin-top: 20px;">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-outline" style="width:100%;">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Map Area Mockup -->
+                    <div class="map-container-mock">
+                        <div class="map-placeholder">
+                            <i class="fa-solid fa-map-pin"></i>
+                            <div>
+                                <strong>Interactive Map Mockup</strong>
+                                <p>Experience St, Manhattan, NY</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Improved Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" style="color: white; margin-bottom: 10px;">
+                    <a href="index.html#home" class="logo" style="color: white; margin-bottom: 10px;">
                         <div class="logo-dot"></div>
                         Event<span style="color: var(--primary);">ify</span>
                     </a>
                     <p>Create, manage, and scale your events with ease. Our streamlined toolkit is designed for experiences of all formats.</p>
                 </div>
                 <div>
-                    <h4 class="footer-title">Platform</h4>
+                    <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#home">Home</a></li>
                         <li><a href="events.html">Events Directory</a></li>
-                        <li><a href="auth.html">Register Account</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#packages">Pricing Packages</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-title">Support</h4>
+                    <h4 class="footer-title">Services</h4>
                     <ul class="footer-links">
+                        <li><a href="index.html#services">Event Planning</a></li>
+                        <li><a href="index.html#services">Decor & Styling</a></li>
+                        <li><a href="index.html#services">Gourmet Catering</a></li>
+                        <li><a href="index.html#services">Cinematography</a></li>
+                        <li><a href="index.html#services">Venue Matching</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact Support</h4>
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-phone" style="margin-right: 6px; color: var(--primary);"></i> +1 (800) 555-0199</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 8px;"><i class="fa-solid fa-envelope" style="margin-right: 6px; color: var(--primary);"></i> hello@eventify.com</p>
+                    <ul class="footer-links" style="margin-top: 15px;">
                         <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Support</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -188,18 +899,12 @@
         </div>
     </footer>
 
+    <!-- Supabase CDN & Client Initialization -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase-client.js"></script>
-
-<!-- Event Data -->
-<script src="events-data.js"></script>
-
-<!-- Main JS -->
-<script src="main.js"></script>
-
-<!-- Events JS -->
-<script src="events.js"></script>
-<!-- Page Specific Script -->
-<script src="events.js"></script>
+    <script src="supabase-client.js"></script>
+    <!-- Shared Event Data -->
+    <script src="events-data.js"></script>
+    <!-- Shared Javascript -->
+    <script src="main.js"></script>
 </body>
 </html>
