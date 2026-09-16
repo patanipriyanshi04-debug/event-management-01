@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventify - Discover & Host Premium Events</title>
+    <title>Explore Events - Eventify</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome Icons -->
@@ -24,196 +24,128 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="events.html" class="nav-link">Events</a></li>
-                <li><a href="auth.html" class="nav-link">Login/Signup</a></li>
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="events.html" class="nav-link active">Events</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#packages" class="nav-link">Packages</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 <li><a href="auth.html" class="btn btn-primary nav-btn">Get Started</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-wrapper">
-        <div class="hero-bg-blobs">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fa-solid fa-sparkles"></i>
-                    <span>Connecting you to local & global experiences</span>
+    <!-- Catalog Page Content -->
+    <main class="catalog-wrapper">
+        <section>
+            <div class="container">
+                <div class="section-header" style="text-align: left; max-width: 100%; margin-bottom: 30px;">
+                    <h2>Explore Events</h2>
+                    <p>Find and book tickets to conferences, workshops, design expos, concerts, and more.</p>
                 </div>
-                <h1>Host, Manage, and Discover <span>Unforgettable Events</span></h1>
-                <p>Bring people together with the world's most powerful, intuitive event hosting platform. Seamless ticketing, beautiful layouts, and real-time attendee tracking.</p>
-                <div class="hero-ctas">
-                    <a href="events.html" class="btn btn-primary">Browse Events</a>
-                    <a href="auth.html" class="btn btn-secondary">Host an Event</a>
+
+                <!-- Filters Panel -->
+                <div class="filter-bar">
+                    <div class="search-filter-row">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="searchInput" class="search-input" placeholder="Search by title, location, or host name...">
+                        </div>
+                        <div class="sort-box">
+                            <select id="sortBy" aria-label="Sort events">
+                                <option value="date-asc">Date: Upcoming first</option>
+                                <option value="date-desc">Date: Furthest first</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="categories-row">
+                        <button class="category-tab active" data-category="all">All Events</button>
+                        <button class="category-tab" data-category="tech">Technology</button>
+                        <button class="category-tab" data-category="music">Music</button>
+                        <button class="category-tab" data-category="art">Arts & Design</button>
+                        <button class="category-tab" data-category="sports">Sports & Wellness</button>
+                    </div>
+                </div>
+
+                <!-- Grid Catalog -->
+                <div class="events-catalog-grid" id="eventsGrid">
+                    <!-- Events loaded dynamically via events.js -->
                 </div>
             </div>
-        </div>
-    </header>
+        </section>
+    </main>
 
-    <!-- Stats Counter Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>500K+</h3>
-                    <p>Tickets Sold</p>
-                </div>
-                <div class="stat-item">
-                    <h3>1,200+</h3>
-                    <p>Active Hosts</p>
-                </div>
-                <div class="stat-item">
-                    <h3>4.8★</h3>
-                    <p>Host Rating</p>
-                </div>
-                <div class="stat-item">
-                    <h3>99.9%</h3>
-                    <p>Booking Success</p>
-                </div>
+    <!-- Detailed Modal Dialogue -->
+    <div class="modal-overlay" id="eventModal">
+        <div class="modal-container">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-hero-banner" id="modalBanner">
+                <i id="modalBannerIcon" class=""></i>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Everything You Need to Connect</h2>
-                <p>We provide tools for organizers and attendees that make discovering, booking, and running events simple, fast, and secure.</p>
-            </div>
-            
-            <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-ticket"></i>
+            <div class="modal-body">
+                <span class="modal-category-pill" id="modalCategory">Category</span>
+                <h2 class="modal-title" id="modalTitle">Event Title Placeholder</h2>
+                
+                <div class="modal-grid">
+                    <div class="modal-info-item">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <div>
+                            <h4>Date & Time</h4>
+                            <p id="modalDateTime">October 12, 2026 at 9:00 AM</p>
+                        </div>
                     </div>
-                    <h3>Easy Ticketing</h3>
-                    <p>Create customizable digital tickets, configure VIP passes, and sell out in minutes with secure local checkouts.</p>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p id="modalLocation">Virtual Event / Online</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <div>
+                            <h4>Organized By</h4>
+                            <p id="modalOrganizer">TechCorp Inc.</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fa-solid fa-ticket-simple"></i>
+                        <div>
+                            <h4>Tickets Available</h4>
+                            <p id="modalTicketsLeft">45 spots remaining</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3>Powerful Dashboard</h3>
-                    <p>Track check-ins, ticketing metrics, audience demographics, and real-time revenue stats in a single panel.</p>
+
+                <div class="modal-details-desc">
+                    <h3>About This Event</h3>
+                    <p id="modalDescription">Detailed information about the event description, what visitors can learn, special requirements, and timelines will be rendered dynamically.</p>
                 </div>
-                <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-map-location-dot"></i>
+
+                <div class="modal-checkout-row">
+                    <div class="modal-price-calc">
+                        <h4>Ticket price</h4>
+                        <p id="modalPrice">$0.00</p>
                     </div>
-                    <h3>Interactive Venues</h3>
-                    <p>Integrate Google Maps, layout physical seating configurations, and offer direct coordinate routing to attendees.</p>
+                    <button class="btn btn-primary" id="btnRegisterTicket">Register for Event</button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Highlighted Events (Teaser) -->
-    <section class="teaser-section" style="background-color: var(--bg-white); border-top: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Experiences</h2>
-                <p>Join top-tier conferences, musical concerts, and active workshops occurring around you this season.</p>
-            </div>
-            
-            <div class="teaser-grid">
-                <!-- Event Card 1 -->
-                <article class="event-card">
-                    <div class="event-image-container" style="background: linear-gradient(135deg, #818cf8, #a78bfa);">
-                        <div class="event-placeholder-graphic">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <span class="event-overlay-category">Technology</span>
-                        <span class="event-overlay-price">$299</span>
-                    </div>
-                    <div class="event-info">
-                        <div class="event-date-row">
-                            <i class="fa-regular fa-calendar"></i>
-                            <span>Oct 12, 2026 • 9:00 AM</span>
-                        </div>
-                        <h3 class="event-title">Global Tech Summit 2026</h3>
-                        <p class="event-desc">Join industry leaders for an engaging series of panels discussing artificial intelligence, web3, and cloud infrastructures.</p>
-                        <div class="event-meta-info">
-                            <div class="event-meta-item">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>San Francisco, CA</span>
-                            </div>
-                        </div>
-                        <div class="event-card-actions">
-                            <a href="events.html" class="btn btn-outline">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Event Card 2 -->
-                <article class="event-card">
-                    <div class="event-image-container" style="background: linear-gradient(135deg, #f472b6, #fb7185);">
-                        <div class="event-placeholder-graphic">
-                            <i class="fa-solid fa-guitar"></i>
-                        </div>
-                        <span class="event-overlay-category">Music</span>
-                        <span class="event-overlay-price">$89</span>
-                    </div>
-                    <div class="event-info">
-                        <div class="event-date-row">
-                            <i class="fa-regular fa-calendar"></i>
-                            <span>Nov 04, 2026 • 6:30 PM</span>
-                        </div>
-                        <h3 class="event-title">Sunset Music Festival</h3>
-                        <p class="event-desc">Experience a stellar lineup of indie bands and acoustic soloists performing at the ultimate waterfront outdoor amphitheater.</p>
-                        <div class="event-meta-info">
-                            <div class="event-meta-item">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>Austin, TX</span>
-                            </div>
-                        </div>
-                        <div class="event-card-actions">
-                            <a href="events.html" class="btn btn-outline">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Event Card 3 -->
-                <article class="event-card">
-                    <div class="event-image-container" style="background: linear-gradient(135deg, #34d399, #60a5fa);">
-                        <div class="event-placeholder-graphic">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-                        <span class="event-overlay-category">Arts</span>
-                        <span class="event-overlay-price">$45</span>
-                    </div>
-                    <div class="event-info">
-                        <div class="event-date-row">
-                            <i class="fa-regular fa-calendar"></i>
-                            <span>Dec 18, 2026 • 2:00 PM</span>
-                        </div>
-                        <h3 class="event-title">Creative Palette Workshop</h3>
-                        <p class="event-desc">Unleash your expression with guided modern canvas painting classes, led by internationally acclaimed fine arts instructors.</p>
-                        <div class="event-meta-info">
-                            <div class="event-meta-item">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <span>New York, NY</span>
-                            </div>
-                        </div>
-                        <div class="event-card-actions">
-                            <a href="events.html" class="btn btn-outline">Learn More</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="teaser-footer">
-                <a href="events.html" class="btn btn-primary">Browse All Upcoming Events</a>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Alert toast popup -->
+    <div class="alert-toast" id="alertToast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Ticket booked successfully!</span>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -256,10 +188,18 @@
         </div>
     </footer>
 
-    <!-- Supabase CDN & Client Initialization -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase-client.js"></script>
-    <!-- Shared Javascript -->
-    <script src="main.js"></script>
+<script src="supabase-client.js"></script>
+
+<!-- Event Data -->
+<script src="events-data.js"></script>
+
+<!-- Main JS -->
+<script src="main.js"></script>
+
+<!-- Events JS -->
+<script src="events.js"></script>
+<!-- Page Specific Script -->
+<script src="events.js"></script>
 </body>
 </html>
