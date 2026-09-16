@@ -64,6 +64,7 @@ const renderEvents = () => {
         const query = searchQuery.toLowerCase();
         filteredEvents = filteredEvents.filter(event => {
             return event.title.toLowerCase().includes(query) ||
+                   event.categoryName.toLowerCase().includes(query) ||
                    event.location.toLowerCase().includes(query) ||
                    event.venue.toLowerCase().includes(query) ||
                    event.organizer.toLowerCase().includes(query);
@@ -299,6 +300,20 @@ const setupEventListeners = () => {
 
 // Boot application
 document.addEventListener("DOMContentLoaded", () => {
+    // Read category from query parameters if present
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+        currentCategory = categoryParam;
+        categoryTabs.forEach(t => {
+            if (t.getAttribute("data-category") === categoryParam) {
+                t.classList.add("active");
+            } else {
+                t.classList.remove("active");
+            }
+        });
+    }
+
     renderEvents();
     setupEventListeners();
 });
